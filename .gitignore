@@ -1,0 +1,17 @@
+# Secrets — never commit these
+.ntopng-token
+*.token
+.env
+*.pem
+*.key
+
+# Runtime data — local only
+*.db
+*.log
+*.sqlite
+__pycache__/
+*.pyc
+
+# Editor / OS
+.DS_Store
+.vscode/
