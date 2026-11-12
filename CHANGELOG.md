@@ -19,3 +19,11 @@ Breadcrumbs. One line per step, in the order it happened.
   triage brain; 7B stays as the chat model.
 - Security poller v1 installed, log-only: polls ntopng every 60s,
   7-day rolling retention, triage via the 32B, max 1 flag per run.
+- pfSense hardware verified: old Dell OptiPlex, i5-6500, 8 GB RAM,
+  pfSense 2.9.0, Suricata + pfBlockerNG + ntopng on the edge.
+- Switch identified: 24-port Gb PoE smart switch, fw 2019.
+  Config database overflow fixed by shortening interface
+  descriptions. Firmware upgrade queued.
+- Network documented: VLAN00 WiFi, VLAN20 office/servers,
+  VLAN30 cameras (airgapped, no cameras mounted yet — one bench
+  test only). Server RAM confirmed 4x32GB, 4 slots free.
