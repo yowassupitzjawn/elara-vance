@@ -27,3 +27,24 @@ Breadcrumbs. One line per step, in the order it happened.
 - Network documented: VLAN00 WiFi, VLAN20 office/servers,
   VLAN30 cameras (airgapped, no cameras mounted yet — one bench
   test only). Server RAM confirmed 4x32GB, 4 slots free.
+
+## 2026-11-13
+
+- Home Assistant chat fixed: the Ollama agent asked the 7B chat
+  model to think, and it doesn't support thinking (400). Thinking
+  off, chat works.
+- Image model picked: Pony Diffusion V6 XL. Models moved to the
+  storage disks (13 GB), Pony downloaded, SHA256-verified.
+- GPU back: after the system upgrade, the driver existed only for
+  the old kernel, so Ollama couldn't see the card at all. Driver
+  reinstalled for the current kernel; chat model now fully on GPU
+  (prompt eval ~68 to ~393 tok/s). 32B still mostly CPU-bound.
+- ComfyUI mount-path bug found and fixed: compose pointed the
+  models at /root/comfy/ComfyUI, but ComfyUI lives at /root/ComfyUI.
+  The model list was empty since day one. Paths corrected, all three
+  checkpoints selectable.
+- Pretty URLs live: Nginx Proxy Manager + local DNS overrides, six
+  names (chat, images, home, cameras, net, firewall). Fixed DHCP
+  handing out public DNS instead of the firewall, and a self-signed
+  wildcard cert so the Secure-cookie logins stick. All six hosts
+  HTTPS.
