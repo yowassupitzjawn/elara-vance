@@ -48,3 +48,8 @@ Breadcrumbs. One line per step, in the order it happened.
   handing out public DNS instead of the firewall, and a self-signed
   wildcard cert so the Secure-cookie logins stick. All six hosts
   HTTPS.
+
+## 2026-11-15
+
+- ComfyUI first drive: Issues panel flagged a missing model; the Load
+  Checkpoint node already had Pony. Safetensors is tensors-only, no code.
