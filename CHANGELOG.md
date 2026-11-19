@@ -53,3 +53,18 @@ Breadcrumbs. One line per step, in the order it happened.
 
 - ComfyUI first drive: Issues panel flagged a missing model; the Load
   Checkpoint node already had Pony. Safetensors is tensors-only, no code.
+
+## 2026-11-17
+
+- Rethought what the AI is for: the cameras are the eyes (Frigate
+  + Coral detect and report facts), the AI is the brain (reasons
+  over the event metadata), and deterministic rules are the
+  backbone (Level 2 fires on hard sensors alone; the house keeps
+  working if the LLM dies). The AI owns ambiguous judgment and
+  conversation.
+- Triage model, re-measured: 32B stays the brain — the only model
+  with zero false positives. Qwen3-8B is the fast second opinion
+  (~20 tok/s vs the 32B's ~3.1). DeepSeek-R1-8B ruled out (3-4x
+  slower, silent under a 1024-token cap). 7B stays chat-only.
+- No vision model needed for v1: the 32B reasons over Frigate event
+  metadata today; vision is a later second opinion for snapshots.
