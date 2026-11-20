@@ -68,3 +68,18 @@ Breadcrumbs. One line per step, in the order it happened.
   slower, silent under a 1024-token cap). 7B stays chat-only.
 - No vision model needed for v1: the 32B reasons over Frigate event
   metadata today; vision is a later second opinion for snapshots.
+
+## 2026-11-19
+
+- Frigate bridge v1 installed, log-only: polls camera events every
+  minute, rules first, fast 8B model on the ones that matter, 32B
+  second opinion on the ambiguous ones. First live cycle pulled 100
+  real driveway events (70 people, 22 cars, 5 dogs, 1 bus, 2
+  backpacks); two ambiguous ones went to the 32B.
+- Baseline week started: for one week the house only watches and
+  learns what normal looks like — no lights, no alerts, no siren —
+  before any discussion of actions. Runs to ~Nov 26.
+- MQTT verified actually flowing (223 messages in 90 seconds), not
+  just connected on paper. Install fix: Frigate 0.18 rejects
+  include_thumbnails=false with a 422, so the call uses
+  include_thumbnails=0.
